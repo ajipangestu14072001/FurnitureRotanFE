@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "945572176774",
+    "project_id": "consumer-rotan",
+    "storage_bucket": "consumer-rotan.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:945572176774:android:b1ff34f95b8eece90c4207",
+        "android_client_info": {
+          "package_name": "furniturerotan.id"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "945572176774-pk6v7ig6gilpqioo5je4skrtfk97pej5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQb8t3OndiZrtUJIYujcBpFL5Feh0L3-k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "945572176774-pk6v7ig6gilpqioo5je4skrtfk97pej5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

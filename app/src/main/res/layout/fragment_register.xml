@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Welcome Back!"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:textSize="20sp"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="We're so excited to see you again!"
+            android:gravity="center"
+            android:layout_marginBottom="16dp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            android:id="@+id/mail"
+            android:padding="10dp"
+            android:background="@drawable/edittext_bg"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:layout_marginTop="16dp"
+            android:id="@+id/pwd"
+            android:padding="10dp"
+            android:background="@drawable/edittext_bg"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Name"
+            android:id="@+id/name"
+            android:layout_marginTop="16dp"
+            android:padding="10dp"
+            android:background="@drawable/edittext_bg"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Phone Number"
+            android:id="@+id/phone"
+            android:layout_marginTop="16dp"
+            android:padding="10dp"
+            android:background="@drawable/edittext_bg"
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnRegister"
+            android:textAllCaps="false"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/button_bg"
+            android:text="Register"/>
+    </LinearLayout>
+</RelativeLayout>
