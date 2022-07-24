@@ -46,35 +46,35 @@
 
     </RelativeLayout>
 
-    <RelativeLayout
-        android:id="@+id/layout1"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginRight="20dp"
-        android:background="@drawable/searchbar"
-        app:layout_constraintTop_toBottomOf="@+id/relativeL">
+<!--    <RelativeLayout-->
+<!--        android:id="@+id/layout1"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:layout_marginLeft="20dp"-->
+<!--        android:layout_marginTop="15dp"-->
+<!--        android:layout_marginRight="20dp"-->
+<!--        android:background="@drawable/searchbar"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/relativeL">-->
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:paddingRight="20dp"
-            android:src="@drawable/ic_baseline_search_24" />
+<!--        <ImageView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_alignParentEnd="true"-->
+<!--            android:layout_centerVertical="true"-->
+<!--            android:paddingRight="20dp"-->
+<!--            android:src="@drawable/ic_baseline_search_24" />-->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="30dp"
-            android:text="Lorem ipsum dolor sit amet"
-            android:textAlignment="center"
-            android:textColor="#FFFFFF"
-            android:textSize="16sp" />
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_centerVertical="true"-->
+<!--            android:layout_marginStart="30dp"-->
+<!--            android:text="Lorem ipsum dolor sit amet"-->
+<!--            android:textAlignment="center"-->
+<!--            android:textColor="#FFFFFF"-->
+<!--            android:textSize="16sp" />-->
 
-    </RelativeLayout>
+<!--    </RelativeLayout>-->
 
 
     <androidx.cardview.widget.CardView
@@ -89,7 +89,7 @@
         app:cardCornerRadius="10dp"
         app:cardElevation="5dp"
         app:cardUseCompatPadding="true"
-        app:layout_constraintTop_toBottomOf="@+id/layout1">
+        app:layout_constraintTop_toBottomOf="@+id/relativeL">
 
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/viewPagerImageSlider"

@@ -37,6 +37,7 @@ import furniturerotan.id.view.ProfileActivity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.lang.Exception
 import java.util.ArrayList
 import kotlin.math.abs
 
@@ -128,10 +129,15 @@ class HomeActivity : AppCompatActivity() {
                 call: Call<ResponseChart?>,
                 response: Response<ResponseChart?>
             ) {
-                dataArrayList = response.body()!!.data
-                if (response.isSuccessful) {
-                    binding!!.txtChart.text = "Keranjang (${dataArrayList?.size})"
+                try {
+                    dataArrayList = response.body()!!.data
+                    if (response.isSuccessful) {
+                        binding!!.txtChart.text = "Keranjang (${dataArrayList?.size})"
+                    }
+                }catch (e : Exception){
+                    Toast.makeText(applicationContext, e.toString(), Toast.LENGTH_SHORT).show()
                 }
+
             }
 
             override fun onFailure(call: Call<ResponseChart?>, t: Throwable) {
