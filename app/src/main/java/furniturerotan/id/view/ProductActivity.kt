@@ -47,7 +47,7 @@ class ProductActivity : AppCompatActivity() {
         databaseReference = FirebaseDatabase.getInstance().getReference(Database_Path)
         storageReference = FirebaseStorage.getInstance().reference
         progressDialog = ProgressDialog(this)
-
+        setSupportActionBar(binding!!.toolbar)
         val kategoriRotan =
             ArrayAdapter(this@ProductActivity, R.layout.simple_list_item_1, kategori)
         binding!!.kategori.adapter = kategoriRotan
@@ -172,5 +172,9 @@ class ProductActivity : AppCompatActivity() {
         const val Database_Path = "FurnitureRotan"
         private const val RESULT_LOAD_IMAGE = 123
         const val IMAGE_CAPTURE_CODE = 654
+    }
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 }

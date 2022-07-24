@@ -1,5 +1,6 @@
 package furniturerotan.id.view
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -25,6 +26,7 @@ class MejaActivity : AppCompatActivity() {
         setContentView(view)
         val sharedPreferences = getSharedPreferences("myKey", MODE_PRIVATE)
         val cookie = sharedPreferences.getString("token", "")
+        setSupportActionBar(binding!!.toolbar)
 
         val apiInterface =
             APIClient().getClient(applicationContext).create(APIInterface::class.java)
@@ -55,5 +57,14 @@ class MejaActivity : AppCompatActivity() {
                 call.cancel()
             }
         })
+        binding!!.addData.setOnClickListener{
+            val intent = Intent(this@MejaActivity, ProductActivity::class.java)
+            startActivity(intent)
+        }
+
+    }
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 }

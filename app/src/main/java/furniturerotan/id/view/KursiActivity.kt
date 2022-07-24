@@ -1,5 +1,6 @@
 package furniturerotan.id.view
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
@@ -25,6 +26,7 @@ class KursiActivity : AppCompatActivity() {
         binding = ActivityKursiBinding.inflate(layoutInflater)
         val view : View = binding!!.root
         setContentView(view)
+        setSupportActionBar(binding!!.toolbar)
         val sharedPreferences = getSharedPreferences("myKey", MODE_PRIVATE)
         val cookie = sharedPreferences.getString("token", "")
 
@@ -57,5 +59,13 @@ class KursiActivity : AppCompatActivity() {
                 call.cancel()
             }
         })
+        binding!!.addData.setOnClickListener{
+            val intent = Intent(this@KursiActivity, ProductActivity::class.java)
+            startActivity(intent)
+        }
+    }
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 }
