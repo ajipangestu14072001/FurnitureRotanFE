@@ -19,8 +19,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CONSUMER_ROTAN"
         android:usesCleartextTraffic="true"
-        tools:targetApi="31"
-        tools:replace="android:usesCleartextTraffic">
+        tools:replace="android:usesCleartextTraffic"
+        tools:targetApi="31">
+        <activity
+            android:name=".view.DetailHistoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.HistoryActivity"
+            android:exported="false" />
         <activity
             android:name=".view.ChartDetailActivity"
             android:exported="false" />

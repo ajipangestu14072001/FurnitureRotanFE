@@ -54,4 +54,11 @@ interface APIInterface {
     @Headers("Accept: application/json", "Content-Type: application/json")
     @POST("transactions/buy")
     fun buy(@Header("Authorization") auth: String?, @Body chart: Transaksi?): Call<Transaksi?>?
+
+    @Headers("Accept: application/json", "Content-Type: application/json")
+    @GET("transactions/buy/idUser")
+    fun getHistory(
+        @Header("Authorization") auth: String?,
+        @Query("idUser") idUsers: String?
+    ): Call<History?>?
 }

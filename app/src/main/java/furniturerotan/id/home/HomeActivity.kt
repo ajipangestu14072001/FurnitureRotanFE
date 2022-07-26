@@ -30,10 +30,7 @@ import furniturerotan.id.response.ResponseChart
 import furniturerotan.id.response.ResponseDataObject
 import furniturerotan.id.services.APIClient
 import furniturerotan.id.services.APIInterface
-import furniturerotan.id.view.AuthActivity
-import furniturerotan.id.view.ChartDetailActivity
-import furniturerotan.id.view.ProductActivity
-import furniturerotan.id.view.ProfileActivity
+import furniturerotan.id.view.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -114,6 +111,20 @@ class HomeActivity : AppCompatActivity() {
             }
         }
         getCart()
+
+        binding!!.histori.setOnClickListener {
+            if (!sharedPrefManager!!.sPSudahLogin) {
+                startActivity(
+                    Intent(
+                        applicationContext,
+                        AuthActivity::class.java
+                    ).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
+                )
+            } else {
+                val intent = Intent(applicationContext, HistoryActivity::class.java)
+                startActivity(intent)
+            }
+        }
 
     }
 

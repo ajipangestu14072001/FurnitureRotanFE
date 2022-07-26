@@ -74,7 +74,9 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.13.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.13.0'
     implementation 'com.getbase:floatingactionbutton:1.10.1'
-    implementation 'com.midtrans:uikit:1.31.1-SANDBOX' // change the number to the latest version
+    implementation 'com.midtrans:uikit:1.31.1-SANDBOX'
+    implementation 'com.vipulasri:ticketview:1.1.2'
+
 
 
 }
