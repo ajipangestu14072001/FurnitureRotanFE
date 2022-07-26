@@ -22,7 +22,6 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import furniturerotan.id.databinding.ActivityProductBinding
-import furniturerotan.id.model.Data
 import furniturerotan.id.response.DataObject
 import furniturerotan.id.services.APIClient
 import furniturerotan.id.services.APIInterface

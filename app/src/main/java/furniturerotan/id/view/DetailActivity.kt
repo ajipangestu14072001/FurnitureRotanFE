@@ -10,6 +10,7 @@ import com.bumptech.glide.Glide
 import furniturerotan.id.databinding.ActivityDetailBinding
 import furniturerotan.id.helper.SharedPrefManager
 import furniturerotan.id.response.Chart
+import furniturerotan.id.response.DataObject
 import furniturerotan.id.response.ResponseDataObject
 import furniturerotan.id.response.ResponseRegister
 import furniturerotan.id.services.APIClient
@@ -21,6 +22,7 @@ import retrofit2.Response
 class DetailActivity : AppCompatActivity() {
     private  var binding : ActivityDetailBinding? =null
     private var sharedPrefManager: SharedPrefManager? = null
+    private var datumList : DataObject? =  null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailBinding.inflate(layoutInflater)
@@ -30,7 +32,11 @@ class DetailActivity : AppCompatActivity() {
         val sharedPreferences1 = getSharedPreferences("myKey", MODE_PRIVATE)
         val cookie = sharedPreferences1.getString("token", "")
         val userId = sharedPreferences1.getString("userId", "")
-        val idBarang = intent.getStringExtra("id")
+        val sharedPreference =  getSharedPreferences("BARANG",MODE_PRIVATE)
+        val editor = sharedPreference.edit()
+        editor.putString("idBarang",intent.getStringExtra("id"))
+        editor.apply()
+        val idBarang = intent.getStringExtra("id").toString()
         val apiInterface = APIClient().getClient(applicationContext).create(APIInterface::class.java)
         val call: Call<ResponseDataObject?>? =
             apiInterface.getBarangByID("Bearer $cookie", idBarang)
@@ -41,17 +47,17 @@ class DetailActivity : AppCompatActivity() {
             ) {
                 Log.d("TAG", response.code().toString() + "")
                 val resource: ResponseDataObject? = response.body()
-                val datumList = resource?.data
+                datumList = resource?.data
                 if (response.isSuccessful) {
                     if (datumList != null) {
                         Glide.with(applicationContext)
                             .asBitmap()
-                            .load(datumList.pathPhoto.replace("\\\\".toRegex(), ""))
+                            .load(datumList!!.pathPhoto.replace("\\\\".toRegex(), ""))
                             .into(binding!!.imgview)
-                        binding!!.title.text = datumList.namaBarang
-                        binding!!.harga.text = "Rp."+datumList.harga.toString()
-                        binding!!.desc.text = datumList.deskripsi
-                        binding!!.lokasi.text = datumList.lokasi
+                        binding!!.title.text = datumList!!.namaBarang
+                        binding!!.harga.text = "Rp."+ datumList!!.harga.toString()
+                        binding!!.desc.text = datumList!!.deskripsi
+                        binding!!.lokasi.text = datumList!!.lokasi
                     }
 
                 }
@@ -121,6 +127,10 @@ class DetailActivity : AppCompatActivity() {
                 )
             } else {
                 val intent = Intent(applicationContext, BuyActivity::class.java)
+                intent.putExtra("photo", datumList!!.pathPhoto.replace("\\\\".toRegex(), ""))
+                intent.putExtra("harga", datumList!!.harga.toString())
+                intent.putExtra("idBarang", intent.getStringExtra("id").toString())
+                intent.putExtra("namaBarang", datumList!!.namaBarang)
                 startActivity(intent)
             }
         }

@@ -46,19 +46,28 @@
             android:text="Rp729.000" />
 
         <LinearLayout
-            android:layout_width="24dp"
-            android:layout_height="24dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_below="@id/hargaChart"
             android:layout_marginStart="10dp"
             android:layout_marginTop="7dp"
             android:layout_toEndOf="@id/imgchart"
             android:orientation="horizontal">
 
-            <ImageView
-                android:id="@+id/chartDelete"
-                android:layout_width="wrap_content"
+<!--            <ImageView-->
+<!--                android:id="@+id/chartDelete"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:src="@drawable/ic_round_delete_24" />-->
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buyBtn"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_round_delete_24" />
+                android:layout_marginEnd="10dp"
+                android:text="Beli"
+                android:textAllCaps="false"
+                app:cornerRadius="8dp" />
 
         </LinearLayout>
 

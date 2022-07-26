@@ -1,16 +1,19 @@
 package furniturerotan.id.adapter
 
 import android.content.Context
-import android.support.annotation.NonNull
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.annotation.NonNull
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import furniturerotan.id.R
 import furniturerotan.id.response.Chart
+import furniturerotan.id.view.DetailActivity
 
 
 class CartAdapter(context: Context, courseModelArrayList: ArrayList<Chart>) :
@@ -33,6 +36,12 @@ class CartAdapter(context: Context, courseModelArrayList: ArrayList<Chart>) :
             .asBitmap()
             .load(model.pathPhoto.replace("\\\\".toRegex(), ""))
             .into(holder.img)
+        holder.beli.setOnClickListener {
+            val intent = Intent(context, DetailActivity::class.java)
+            intent.putExtra("id", model.idBarang)
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            context.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int {
@@ -42,11 +51,13 @@ class CartAdapter(context: Context, courseModelArrayList: ArrayList<Chart>) :
         val img: ImageView
         val title: TextView
         val harga: TextView
+        val beli: Button
 
         init {
             img = itemView.findViewById(R.id.imgchart)
             title = itemView.findViewById(R.id.tittlechart)
             harga = itemView.findViewById(R.id.hargaChart)
+            beli = itemView.findViewById(R.id.buyBtn)
         }
     }
     init {

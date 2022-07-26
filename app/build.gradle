@@ -17,6 +17,17 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    signingConfigs {
+        release {
+            debug {
+                storeFile file('C:/Users/ROOT/.android/debug.keystore')
+                storePassword 'android'
+                keyPassword 'android'
+                keyAlias 'androiddebugkey'
+            }
+        }
+
+    }
     buildTypes {
         release {
             minifyEnabled false
@@ -63,6 +74,7 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.13.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.13.0'
     implementation 'com.getbase:floatingactionbutton:1.10.1'
+    implementation 'com.midtrans:uikit:1.31.1-SANDBOX' // change the number to the latest version
 
 
 }

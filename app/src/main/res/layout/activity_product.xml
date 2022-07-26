@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context=".view.ProductActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/appbar"
         android:background="@android:color/transparent"
         app:elevation="0dp">
 
@@ -41,6 +41,7 @@
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
+        android:layout_below="@+id/appbar"
         android:layout_height="wrap_content">
 
         <LinearLayout
@@ -192,4 +193,4 @@
 
     </com.getbase.floatingactionbutton.FloatingActionsMenu>
 
-</LinearLayout>
+</RelativeLayout>

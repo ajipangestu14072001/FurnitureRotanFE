@@ -1,9 +1,6 @@
 package furniturerotan.id.services
 
-import furniturerotan.id.model.Barang
-import furniturerotan.id.model.Data
-import furniturerotan.id.model.LogOut
-import furniturerotan.id.model.Login
+import furniturerotan.id.model.*
 import furniturerotan.id.response.*
 import retrofit2.Call
 import retrofit2.http.*
@@ -53,4 +50,8 @@ interface APIInterface {
     @Headers("Accept: application/json", "Content-Type: application/json")
     @POST("cart/add")
     fun addChart(@Header("Authorization") auth: String?, @Body chart: Chart?): Call<Chart?>?
+
+    @Headers("Accept: application/json", "Content-Type: application/json")
+    @POST("transactions/buy")
+    fun buy(@Header("Authorization") auth: String?, @Body chart: Transaksi?): Call<Transaksi?>?
 }
