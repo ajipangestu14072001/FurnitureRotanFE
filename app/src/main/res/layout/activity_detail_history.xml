@@ -50,6 +50,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgHistory"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
@@ -73,6 +74,7 @@
             app:layout_constraintTop_toTopOf="@+id/guideline">
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/namaBarangHistory"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -80,13 +82,7 @@
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Dummy"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption"
-                android:textColor="#808080" />
-
-            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/hargaHistory"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Dummy"
@@ -109,11 +105,12 @@
                     <androidx.appcompat.widget.AppCompatTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Lorem ipsum"
+                        android:text="Jumlah Beli"
                         android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption"
                         android:textColor="@color/black" />
 
                     <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/jumlahBeliHistory"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Dummy"
@@ -139,11 +136,12 @@
                     <androidx.appcompat.widget.AppCompatTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Lorem ipsum"
+                        android:text="Toatal Harga"
                         android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption"
                         android:textColor="@color/black" />
 
                     <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/totalHargaHistory"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Dummy"
@@ -169,11 +167,12 @@
                     <androidx.appcompat.widget.AppCompatTextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Lorem ipsum"
+                        android:text="Pengiriman"
                         android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption"
                         android:textColor="@color/black" />
 
                     <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/pengeirimanHistory"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Dummy"
