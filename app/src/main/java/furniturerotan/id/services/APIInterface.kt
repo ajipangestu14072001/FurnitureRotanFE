@@ -2,6 +2,7 @@ package furniturerotan.id.services
 
 import furniturerotan.id.model.*
 import furniturerotan.id.response.*
+import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -61,4 +62,14 @@ interface APIInterface {
         @Header("Authorization") auth: String?,
         @Query("idUser") idUsers: String?
     ): Call<History?>?
+
+    @Headers("Accept: application/pdf", "Content-Type: application/pdf")
+    @GET("transactions/transaksi/export/pdf")
+    @Streaming
+    fun getReport( @Header("Authorization") auth: String?): Call<ResponseBody?>?
+
+    @Headers("Accept: application/pdf", "Content-Type: application/pdf")
+    @GET("barang/export/pdf")
+    @Streaming
+    fun getReportMasuk( @Header("Authorization") auth: String?): Call<ResponseBody?>?
 }

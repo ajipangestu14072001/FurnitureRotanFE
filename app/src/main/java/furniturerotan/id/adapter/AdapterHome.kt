@@ -91,7 +91,7 @@ class AdapterHome(var context: Context) : RecyclerView.Adapter<AdapterHome.MyAda
             holder.image.setImageResource(R.drawable.toped)
             holder.image1.setImageResource(R.drawable.ic_baseline_data_object_24)
             holder.back.setBackgroundColor(Color.parseColor("#F2EEAA45"))
-            holder.text.text = "Lain-lain"
+            holder.text.text = "Laporan"
             holder.back.setOnClickListener {
                 if (!sharedPrefManager!!.sPSudahLogin) {
                     context.startActivity(
@@ -101,7 +101,7 @@ class AdapterHome(var context: Context) : RecyclerView.Adapter<AdapterHome.MyAda
                         ).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
                     )
                 } else {
-                    val intent = Intent(context, LainActivity::class.java)
+                    val intent = Intent(context, ReportActivity::class.java)
                     intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
                     context.startActivity(intent)
                 }
