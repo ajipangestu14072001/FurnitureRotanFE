@@ -17,9 +17,7 @@ import java.io.File
 
 class ReportActivity : AppCompatActivity() {
     private var binding : ActivityReportBinding? = null
-    private val filePath = File(
-        Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).toString()
-    )
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityReportBinding.inflate(layoutInflater)
@@ -27,6 +25,10 @@ class ReportActivity : AppCompatActivity() {
         setContentView(view)
         val sharedPreferences = getSharedPreferences("myKey", MODE_PRIVATE)
         val token = sharedPreferences.getString("token", "")
+        val filePath = File(
+            applicationContext.getExternalFilesDir(null).toString()
+        )
+        Log.i("MSK", filePath.toString())
         binding!!.reportTransaksi.setOnClickListener {
             val apiInterface =
                 APIClient().getClient(applicationContext).create(APIInterface::class.java)
@@ -87,4 +89,5 @@ class ReportActivity : AppCompatActivity() {
             })
         }
     }
+
 }
