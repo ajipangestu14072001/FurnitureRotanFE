@@ -20,6 +20,7 @@ class BantuanActivity : AppCompatActivity() {
         binding = ActivityBantuanBinding.inflate(layoutInflater)
         val view : View = binding!!.root
         setContentView(view)
+        setSupportActionBar(binding!!.toolbar)
         binding!!.emailBantuan.setOnClickListener {
             val subject = "Hubungi Furniture Rotan"
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse("mailto:" + "dabelempat14072001@gmail.com"))
@@ -62,5 +63,9 @@ class BantuanActivity : AppCompatActivity() {
             intent.data = Uri.parse("tel:" + "081345602416")
             startActivity(intent)
         }
+    }
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 }

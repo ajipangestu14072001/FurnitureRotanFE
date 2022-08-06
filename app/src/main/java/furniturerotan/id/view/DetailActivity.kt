@@ -28,6 +28,7 @@ class DetailActivity : AppCompatActivity() {
         binding = ActivityDetailBinding.inflate(layoutInflater)
         val view : View = binding!!.root
         setContentView(view)
+        setSupportActionBar(binding!!.toolbar)
         sharedPrefManager = SharedPrefManager(applicationContext)
         val sharedPreferences1 = getSharedPreferences("myKey", MODE_PRIVATE)
         val cookie = sharedPreferences1.getString("token", "")
@@ -134,5 +135,9 @@ class DetailActivity : AppCompatActivity() {
                 startActivity(intent)
             }
         }
+    }
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 }

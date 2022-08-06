@@ -24,6 +24,7 @@ class HistoryActivity : AppCompatActivity() {
         binding = ActivityHistoryBinding.inflate(layoutInflater)
         val view: View = binding!!.root
         setContentView(view)
+        setSupportActionBar(binding!!.toolbar)
         val sharedPreferences1 = getSharedPreferences("myKey", MODE_PRIVATE)
         val cookie = sharedPreferences1.getString("token", "")
         val idUsers = sharedPreferences1.getString("userId", "")
@@ -61,5 +62,9 @@ class HistoryActivity : AppCompatActivity() {
                 call.cancel()
             }
         })
+    }
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 }

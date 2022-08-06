@@ -43,6 +43,7 @@ class BuyActivity : AppCompatActivity() {
         binding = ActivityBuyBinding.inflate(layoutInflater)
         val view: View = binding!!.root
         setContentView(view)
+        setSupportActionBar(binding!!.toolbar)
         sharedPrefManager = SharedPrefManager(this)
         val sharedPreferences = getSharedPreferences("myKey", MODE_PRIVATE)
         val sharedPreferences2 = getSharedPreferences("BARANG", MODE_PRIVATE)
@@ -144,5 +145,9 @@ class BuyActivity : AppCompatActivity() {
         customerDetails.billingAddress = billingAddress
 
         transactionRequest.customerDetails = customerDetails
+    }
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 }
